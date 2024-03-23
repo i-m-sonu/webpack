@@ -10,9 +10,9 @@ try {
 }
 
 function generateRequireString(conditional, suffix) {
-	const prefixedSuffix = suffix ? `.${suffix}` : "";
-	return `require(${JSON.stringify(`./${conditional}${prefixedSuffix}.js`)});`;
+    return `require(${JSON.stringify(`./${conditional}${suffix ? `.${suffix}` : ""}.js`)});`;
 }
+
 
 for (let i = 0; i < 10000; i++) {
 	const source = [];
